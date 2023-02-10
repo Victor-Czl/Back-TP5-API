@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "departements", schema = "public", catalog = "transport")
 public class DepartementsEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Id
     @Column(name = "idept")
     private String idept;

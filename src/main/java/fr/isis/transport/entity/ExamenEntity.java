@@ -12,9 +12,22 @@ public class ExamenEntity {
     @Id
     @Column(name = "numexamen")
     private Integer numexamen;
+
     @Basic
-    @Column(name = "ipp")
+    @Column(name = "ipp", insertable = false, updatable = false)
     private Integer ipp;
+
+    public PatientEntity getPatientByipp() {
+        return patientByipp;
+    }
+
+    public void setPatientByipp(PatientEntity patientByipp) {
+        this.patientByipp = patientByipp;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "ipp", insertable = false, updatable = false)
+    private PatientEntity patientByipp;
     @Basic
     @Column(name = "type")
     private String type;
